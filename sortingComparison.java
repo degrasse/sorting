@@ -1,13 +1,11 @@
-	import java.util.Arrays;
-	import java.util.Comparator;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.stream.IntStream;
 
 public class sortingComparison {
 
-
-	
-		//Bubble Sort
-		public static void bubbleSort(int[] L, Comparator<Integer> c){
+	//Bubble Sort
+	public static void bubbleSort(int[] L, Comparator<Integer> c){
 			int i = 0;
 			while( i < L.length){
 				int j =i + 1;
@@ -24,7 +22,7 @@ public class sortingComparison {
 		}
 		
 
-		//Selection Sort
+	//Selection Sort
 	public static void selectionSort(int[] L, Comparator<Integer> c ){
 		int i = 0;
 		while( i < L.length-1){
@@ -41,9 +39,8 @@ public class sortingComparison {
 	}
 		
 		
-		//Insertion Sort
-
-		public static void insertionSort(int[] L, Comparator<Integer> c ){
+	//Insertion Sort
+	public static void insertionSort(int[] L, Comparator<Integer> c ){
 		
 			int hole=0;
 			int val=0;
@@ -59,16 +56,9 @@ public class sortingComparison {
 				L[hole] = val;
 			
 			}
-			
-			
-				
-			}
-			
-		
 	
-		
-		
-		
+		}
+	
 
 	//Merge Sort 
 	public static void mergeSort(int[] L, Comparator<Integer> c){
@@ -104,12 +94,7 @@ public class sortingComparison {
 		
 	}
 
-
-
-
-
 	//Quick Sort 
-
 	public static void quickSort(int[] L, Comparator<Integer> c, int lo, int hi){
 		if( lo > hi) return;
 		int left = lo;
@@ -122,16 +107,7 @@ public class sortingComparison {
 				left++;
 			while(c.compare(L[right], piv) > 0)
 				right--;
-		
-		
-		/*while ( left <= right){
-			while( left <= hi && c.compare(L[left], piv) < 0){
-				left++;
-			}	
-			while( left <= hi && c.compare(L[right], piv) > 0){
-				right--;
-			}
-			*/
+	
 			if ( left <= right){
 				temp = L[left];
 				L[left] = L[right];
@@ -151,11 +127,7 @@ public class sortingComparison {
 		quickSort(L, c, left, hi);
 			
 		}
-	
 
-	
-	
-	
 	public static class MyComparator<Integer> implements Comparator<Integer> {
 
 		@Override
@@ -166,11 +138,10 @@ public class sortingComparison {
 	}
 
 
-
+/// TESTING ///
 	public static  void main(String args[]){
 		
-		
-		
+
 		Comparator<Integer> c = new MyComparator<>();
 		
 		int[] smallSorted = {1,2,3,4,4,5,6,7,8,9,9};
@@ -402,14 +373,7 @@ public class sortingComparison {
 		quickSort(veryLargeUnsorted, c, 0, veryLargeUnsorted.length-1);
 		diff_time = System.nanoTime() - start_time;
 		System.out.println("Took " + diff_time + " nano seconds");
-		
-		
-		
-		
-		
-		
+
 	}
 	}
-
-
 
